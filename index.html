@@ -7,17 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
-        
+	@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Great+Vibes&family=Petit+Formal+Script&display=swap');	        
         body {
-            font-family: 'Montserrat', sans-serif;
             background-color: #ffffff;
             color: #333;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
+
+        h1{
+            font-family: 'Petit Formal Script', cursive;
+            font-size: 3em;
+            color: #333;
+        }
+        p {
+            font-family: 'Cardo', serif;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .invito {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: #a22;
         }
         
         /* Envelope styling */
@@ -88,8 +98,7 @@
             left: 5%;
             width: 90%;
             height: 90%;
-            //background-color: #FDFBF7;
-	    background-image: url('./modificata.png'); /* immagine locale */
+            background-color: #FDFBF7;
 	    background-size: contain;
 	    background-repeat: no-repeat;
 	    background-position: center;
@@ -123,9 +132,9 @@
         
         /* Wax seal styling */
         .wax-seal {
-            width: 80px;
-            height: 80px;
-	    background-image: url('./timbro.png');
+            width: 140px;
+            height: 140px;
+	    background-image: url('timbrofinale.png');
 	    background-size: cover;
             background-position: center;
             border-radius: 50%;
@@ -266,11 +275,35 @@
             transform: translate(-50%, -50%);
 	    width: 100px;
 	    height: 40px;
-	    background-image: url('./divider2.png');
+	    background-image: url('divider2.png');
 	    background-size: cover;
 	    background-position: center;
 	    border: none;
 	    box-shadow: none;
+        }
+/*iniziali*/
+        .iniziali {
+           position: relative;
+           min-height: 120px;
+           background: none;
+           margin-top: 4rem;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        .iniziali::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            height: 160px;
+            background-image: url('iniziali.png');
+            background-size: cover;
+            background-position: center;
+            border: none;
+            box-shadow: none;
         }
         
         /* Location icon styling */
@@ -345,7 +378,7 @@
         .close-modal:hover {
             color: #333;
         }
-        
+
         /* Map styling */
         .map-container {
             width: 100%;
@@ -373,16 +406,6 @@
             color: #a6c1ee;
             margin-bottom: 1rem;
         }
-
-        /* Calendar icon styling */
-        .calendar-icon {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 8px;
-            width: 24px;
-            height: 24px;
-        }
-
 
 	
         /* Debug */
@@ -460,135 +483,100 @@
             
         <!-- Card Content -->
         <div class="envelope-content shadow-2xl p-6 flex flex-col items-center justify-center" id="invitation-card">
-            <div class="text-center relative w-full h-full">
-                
-		<p class="text-lg text-[#8b4513] italic mb-4 mt-20 font-[cursive]">Siamo lieti di invitarvi al nostro matrimonio</p>
-                <div class="w-16 h-1 bg-[#a6c1ee] mx-auto mb-6"></div>
-                
-                <div class="space-y-6 mb-8 px-4">
-                    <div>
-                        <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="4" width="20" height="18" rx="2" stroke="#8B4513" stroke-width="2" fill="#fff"/>
-                            <path d="M2 10H22" stroke="#8B4513" stroke-width="2"/>
-                            <path d="M7 2V6" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M17 2V6" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="7" cy="14" r="1" fill="#8B4513"/>
-                            <circle cx="12" cy="14" r="1" fill="#8B4513"/>
-                            <circle cx="17" cy="14" r="1" fill="#8B4513"/>
-                            <circle cx="7" cy="18" r="1" fill="#8B4513"/>
-                            <circle cx="12" cy="18" r="1" fill="#8B4513"/>
-                            <circle cx="17" cy="18" r="1" fill="#8B4513"/>
-                        </svg>
-                        <p class="text-gray-700">Sabato, 4 Ottobre 2025</p>
-                        <p class="text-gray-700">Alle ore 11:00</p>
-                    </div>
-                    
-                    <div>
-		                              <!-- Church SVG Icon -->
-                        <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L4 6V22H20V6L12 2Z" stroke="#8B4513" stroke-width="2" fill="#fff"/>
-                            <path d="M12 2V6" stroke="#8B4513" stroke-width="2"/>
-                            <path d="M9 10H15" stroke="#8B4513" stroke-width="2"/>
-                            <path d="M12 10V16" stroke="#8B4513" stroke-width="2"/>
-                            <path d="M4 22H20" stroke="#8B4513" stroke-width="2"/>
-                            <path d="M9 22V16H15V22" stroke="#8B4513" stroke-width="2"/>
-                        </svg>
-                        <p class="text-gray-700">Convento francescano dei Frati Minori</p>
-                        <div class="address-container flex items-center justify-center">
-                            <a href="https://maps.google.com/?q=convento+dei+frati+minori+san+gennaro+vesuviano" target="_blank" class="location-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </a>
-                            <p class="text-gray-700">Piazza Regina Margherita, 2</p>
-                        </div>
-                        <p class="text-gray-700">80040 San Gennaro Vesuviano (NA)</p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-lg font-semibold text-[#8b4513]">Ricevimento</h3>
-                        <p class="text-gray-700">A seguire festeggeremo presso:</p>
-                        <p class="text-gray-700">Grand Hotel Capodimonte</p>
-                        <div class="address-container flex items-center justify-center">
-                            <a href="https://maps.google.com/?q=Grand+Hotel+Capodimonte+Sorrento" target="_blank" class="location-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </a>
-                            <p class="text-gray-700">Via Capo, 15</p>
-                        </div>
-                        <p class="text-gray-700">80067 Sorrento (NA)</p>
-                    </div>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="mb-8">
-                    <h3 class="text-xl font-semibold text-[#8b4513] mb-4">RSVP</h3>
-                    <p class="text-gray-700 mb-4">RSVP entro il 4 Settembre 2025</p>
-                    
-                    <div class="mb-8 flex flex-col space-y-3 items-center inline-flex">
-                        <a href="https://wa.me/393318479882?text=Ciao%20Carmen%20e%20Gaetano,%20confermo%20la%20mia%20presenza%20al%20vostro%20matrimonio!%0ANumero%20di%20persone:%20_______%0AIntolleranze%20o%20allergie%20alimentari:%20_______" target="_blank" class="bg-[#a6c1ee] text-white px-4 py-2 rounded-full hover:bg-[#8aabdb] transition flex items-center justify-center">
-                            <i class="fab fa-whatsapp mr-2"></i>
-                            Conferma su WhatsApp
-                        </a>
-                        <button id="rsvp-no" class="border border-[#a6c1ee] text-[#8aabdb] px-6 py-2 rounded-full hover:bg-[#f0f5ff] transition">
-                            Non potrò partecipare
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="mb-8">
-                    <p class="text-gray-700 mb-4 text-center">La vostra presenza è il regalo più grande,<br> ma se desiderate farci un dono:</p>
-                    
-                    <button id="gift-btn" class="text-[#ff69b4] px-6 py-2 rounded-full hover:bg-[#fff0f5] transition flex items-center justify-center mx-auto">
-                        <div class="gift-icon mx-auto flex flex-col items-center">
-                            <div class="gift-box"></div>
-                            <div class="gift-ribbon"></div>
-                    </button>
-                </div>
-                
-                <div class="mb-12 mt-2">
-                    <p class="text-[#8b4513] italic font-semibold font-[cursive]">Con amore,</p>
-                    <p class="text-[#8b4513] text-2xl font-semibold mt-2 font-[cursive]">Carmen e Gaetano</p>
-                </div>
-		<div class="h-10"></div> <!-- Spazio extra dopo -->
-            </div>
+        <!-- Spazio iniziale -->
+	<div class="mt-40">
+	  <div class="iniziali mb-16"></div>
+	              <div class="mb-8"></div>
+	<div class="divider"></div>
+        <div class="flex justify-center items-center space-x-2 mb-2">
+          <h1 class=" text-lg sm:text-xl md:text-2xl italic font-['Petit Formal Script']">Carmen Giugliano</h1>
+          <h1 class="text-lg sm:text-xl md:text-2xl italic font-['Petit Formal Script']">&</h1>
+          <h1 class="text-lg sm:text-xl md:text-2xl font-['Petit Formal Script']">Gaetano Amabile</h1>
         </div>
+	</div>
+	<div class="h-8"></div> <!-- Spazio extra -->
+        <!-- Annuncio -->
+        <p class="text-[#8b4513] text-sm sm:text-base mb-6 font-[cursive] tracking-wide text-center" style="font-variant: small-caps;">
+          <strong>annunciano con gioia il loro matrimonio</strong>
+        </p>	
+	<div class="text-center relative w-full h-full">
+          
+          
+          <div class="space-y-6 mb-8 px-4">
+	    <div class="flex flex-col items-center space-y-2">
+            <h1 class="text-lg italic font-['Great Vibes'] text-gray-700">Sabato 4 Ottobre 2025, ore 11:00</h1>
+          </div>
+	    <h1 class="text-gray-700 text-base sm: text-lg italic font-['Great Vibes']">Santuario della Madonna del Carmine </h1>
+            <div class="address-container flex items-center justify-center">
+              <a href="https://www.google.com/maps/search/?api=1&query=Santuario+della+Madonna+del+Carmine+Sorrento" target="_blank" class="location-icon">
+		<i class="fas fa-map-marker-alt"></i>
+              </a>
+              <p class="text-gray-700 text-[14px]">Corso Italia, 193 Sorrento (NA)</p>
+            </div>
+            <div class="divider"></div>            
+              <div>
+            <div class="flex flex-col items-center space-y-1">
+              <p class="text-gray-700 text-base  mb-4 tracking-wide" style="font-variant: small-caps;"><strong>Dopo la cerimonia festeggeremo insieme a voi presso:</strong></p\
+><h1 class="text-gray-700 text-lg font-['Great Vibes']">Grand Hotel Capodimonte</h1>
+              <div class="address-container flex items-center justify-center">
+                <a href="https://maps.google.com/?q=Grand+Hotel+Capodimonte+Sorrento" target="_blank" class="location-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </a>
+		<p class="text-[14px] text-gray-700">Via Capo, 15 Sorrento (NA)</p>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="mb-8">
+              <p class="text-base font-semibold text-[#8b4513] mb-4">RSVP entro il 3 Settembre 2025</p>
+              
+              <div class="mb-8 flex flex-col space-y-3 items-center inline-flex">
+		<a href="https://wa.me/393318479882?text=Ciao%20Carmen%20e%20Gaetano,%20confermo%20la%20mia%20presenza%20al%20vostro%20matrimonio!%0ANumero%20di%20persone:%20______%0AIntolleranze%20o%20allergie%20alimentari:%20_______" target="_blank" class="bg-[#a6c1ee] text-white px-4 py-2 rounded-full hover:bg-[#8aabdb] transition flex items-center justify-center">
+                  <i class="fab fa-whatsapp mr-2 text-base"></i>
+                  <span class="text-sm">Conferma su WhatsApp</span>
+                </a>
+		
+		<a href="https://wa.me/393318479882?text=Ciao%20Carmen%20e%20Gaetano,%20mi%20dispiace%20ma%20non%20sar&ograve;%20dei%20vostri!" target="_blank" class="border b\
+																				       order-[#a6c1ee] text-[#8aabdb] px-6 py-2 rounded-full hover:bg-[#f0f5ff] transition text-base">
+                  <i class="fab fa-whatsapp mr-2 text-base"></i>
+                  <span class="text-sm">Non potr&ograve; Partecipare</span>
+                </a>
+              </div>
+            </div>
+                
+            <div class="divider"></div>
+
+            <div class="mb-8">
+	      <p class="text-gray-700 mb-4 text-center text-base"> La vostra presenza &egrave; il regalo pi&ugrave; grande,<br> ma se desiderate farci un dono:</p>
+	      <button id="gift-btn" class="text-[#ff69b4] px-6 py-2 rounded-full hover:bg-[#fff0f5] transition flex items-center justify-center mx-auto">
+                <div class="gift-icon mx-auto flex flex-col items-center">
+                  <div class="gift-box"></div>
+                  <div class="gift-ribbon"></div>
+              </button>
+	    </div>
+	      
+	    
+	    <div class="mb-12 mt-2">
+              <h1 class="text-[#8b4513] italic font-semibold font-['Great Vibes']">Con amore,</h1>
+              <h1 class="text-[#8b4513] text-2xl font-semibold mt-2 font-['Cardo']">Carmen e Gaetano</h1>
+            </div>	    
+                
+
+	    <div class="h-10"></div> <!-- Spazio extra dopo -->
+            </div>
+              </div>
         
         <!-- RSVP Confirmation -->
-        <div id="rsvp-confirmation" class="mt-6 bg-white p-4 rounded-lg shadow text-center hidden">
-            <p id="confirmation-message" class="text-lg text-gray-700"></p>
-        </div>
-        
-        <!-- Gift Modal -->
-        <div id="gift-modal" class="modal">
-            <div class="modal-content relative">
-                <span class="close-modal" data-modal="gift-modal">&times;</span>
-                <h3 class="text-xl font-semibold text-[#8b4513] mb-4">Lista Regali</h3>
-                <p class="text-gray-700 mb-4">La vostra presenza è il regalo più grande, ma se desiderate farci un dono, ecco alcune idee:</p>
-                
-                <ul class="list-disc pl-5 mb-6 text-gray-700">
-                    <li class="mb-2">Contributo per il nostro viaggio di nozze in Giappone</li>
-                    <li class="mb-2">Buoni regalo per arredare la nostra casa</li>
-                    <li class="mb-2">Esperienze da vivere insieme</li>
-                </ul>
-                
-                <p class="text-gray-700 mb-4">Per contribuire al nostro viaggio di nozze:</p>
-                <div class="bg-gray-100 p-3 rounded mb-6">
-                    <p class="font-semibold">IBAN:</p>
-                    <p class="font-mono">IT12A0123456789000000000000</p>
-                    <p class="text-sm mt-2">Intestato a: Carmen e Gaetano</p>
-                    <p class="text-sm">Causale: Regalo di nozze</p>
-                </div>
-                
-                <div class="text-center">
-                    <button class="bg-[#ffb6c1] text-white px-6 py-2 rounded-full hover:bg-[#ff69b4] transition close-modal-btn" data-modal="gift-modal">
-                        Chiudi
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+              <div id="rsvp-confirmation" class="mt-6 bg-white p-4 rounded-lg shadow text-center hidden">
+		<p id="confirmation-message" class="text-lg text-gray-700"></p>
+              </div>
+	
+	      
+
+		</div>
+	      </div>
+
+
     <div id="confetti-container" class="pointer-events-none fixed top-0 left-0 w-full h-full z-[99999] overflow-hidden"></div>
     
     <!-- Debug info -->
@@ -602,7 +590,6 @@
             const waxSeal = document.getElementById('wax-seal');
             const envelopeFlap = document.getElementById('envelope-flap');
             const invitationCard = document.getElementById('invitation-card');
-            const rsvpNo = document.getElementById('rsvp-no');
             const rsvpConfirmation = document.getElementById('rsvp-confirmation');
             const confirmationMessage = document.getElementById('confirmation-message');
             const giftBtn = document.getElementById('gift-btn');
@@ -683,7 +670,7 @@
                 }
             }
             
-            // Funzione per creare l'animazione dei coriandoli
+            // Funzione per creare animazione dei coriandoli
             function createConfetti() {
                 const colors = ['#a6c1ee', '#ffb6c1', '#ffd700', '#ffffff', '#8aabdb'];
                 
@@ -715,9 +702,6 @@
                 openEnvelope();
             });
             
-            rsvpNo.addEventListener('click', function() {
-                showConfirmation("Ci dispiace che non potrai partecipare. Ci mancherai!");
-            });
             
             giftBtn.addEventListener('click', function() {
                 openModal('gift-modal');
@@ -752,5 +736,26 @@
             debug('Script caricato correttamente. Sigillo trovato: ' + (waxSeal !== null));
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'949e68b256aabac4',t:'MTc0ODk0NTUxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'949e68b256aabac4',t:'MTc0ODk0NTUxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+<!-- Gift Modal -->
+<div id="gift-modal" class="modal">
+  <div class="modal-content relative">
+    <span class="close-modal" data-modal="gift-modal">&times;</span>
+    <p class="text-gray-700 mb-4 text-center text-base"> La vostra presenza &egrave; il regalo pi&ugrave; grande,<br> ma se desiderate farci un dono:</p>
+    <div class="bg-gray-100 p-3 rounded mb-6">
+        <p class="font-semibold">IBAN:</p>
+        <p class="font-mono">IT98H0760103400001029685276</p>
+        <p class="text-sm mt-2">Intestato a: Carmen Giugliano</p>
+        <p class="text-sm">Causale: Regalo di nozze</p>
+    </div>
+    <div class="text-center">
+        <button class="bg-[#ffb6c1] text-white px-6 py-2 rounded-full hover:bg-[#ff69b4] transition close-modal-btn" data-modal="gift-modal">
+            Chiudi
+        </button>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
